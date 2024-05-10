@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <ClientProviders>
       <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+        <body className="flex flex-col min-h-screen">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
-            enableSystem={true}
+            enableSystem
             disableTransitionOnChange
           >
             <Header />
