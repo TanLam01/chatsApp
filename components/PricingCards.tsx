@@ -21,7 +21,7 @@ const tiers = [
         name: "Pro",
         id: "pro_tierAAasldfNB",
         href: "#",
-        priceMonthly: "20.000 VND",
+        priceMonthly: "20.000",
         description: "Unlock the Full Potential with Pro!",
         features: [
             "Unlimited Messages in Chats",
@@ -58,7 +58,7 @@ function PricingCards({ redirect }: { redirect: boolean }) {
                                             {tier.priceMonthly}
                                         </span>
                                         <span className="text-base font-semibold leading-7 text-gray-600">
-                                            /month
+                                            VND / month
                                         </span>
                                     </>
                                 ) : (
