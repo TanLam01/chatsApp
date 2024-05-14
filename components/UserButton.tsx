@@ -15,6 +15,7 @@ import { signIn, signOut } from "next-auth/react"
 import { useSubscriptionStore } from "@/store/store"
 import { StarIcon } from "lucide-react"
 import ManageAccountButton from "./ManageAccountButton"
+import LoadingSpinner from "./LoadingSpinner"
 
 function UserButton({ session }: { session: Session | null }) {
     const subscription = useSubscriptionStore((state) => state.subscription);
@@ -39,7 +40,7 @@ function UserButton({ session }: { session: Session | null }) {
                     <DropdownMenuSeparator />
                     {subscription === undefined &&
                         <DropdownMenu>
-                            Loading...
+                            <LoadingSpinner />
                         </DropdownMenu>
                     }
                     {subscription?.role === "pro" && (

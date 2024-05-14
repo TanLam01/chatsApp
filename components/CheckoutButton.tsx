@@ -6,6 +6,7 @@ import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import { useSession } from "next-auth/react"
 import { useState } from "react";
 import ManageAccountButton from "./ManageAccountButton";
+import LoadingSpinner from "./LoadingSpinner";
 
 function CheckoutButton() {
     const { data: session } = useSession();
@@ -57,8 +58,9 @@ function CheckoutButton() {
                 cursor-pointer disabled:text-white disabled:opacity-80 disabled:bg-indigo-600/50 disabled:cursor-default">
                 {isSubscribed ? (
                     <ManageAccountButton />
-                ) : isLoadingSubscription || loading ? 'Loading...' :
-                    <button onClick={() => createCheckoutSession()} >
+                ) : isLoadingSubscription || loading
+                    ? <LoadingSpinner />
+                    : <button onClick={() => createCheckoutSession()} >
                         Sign Up
                     </button>
                 }
