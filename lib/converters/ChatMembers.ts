@@ -1,5 +1,4 @@
 import { db } from "@/firebase";
-import { Subscription } from "@/types/Subscription";
 import {
     DocumentData,
     FirestoreDataConverter,

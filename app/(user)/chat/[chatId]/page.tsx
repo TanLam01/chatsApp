@@ -1,7 +1,10 @@
 function ChatPage() {
     return (
         <>
-
+            {/* Admin Controls */}
+            {/* ChatMembersBadge */}
+            {/* ChatMessages */}
+            {/* ChatInput */}
         </>
     )
 }
