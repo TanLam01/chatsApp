@@ -21,7 +21,7 @@ const tiers = [
         name: "Pro",
         id: "pro",
         href: "#",
-        priceMonthly: "₫20,000",
+        priceMonthly: "₫50,000",
         description: "Unlock the Full Potential with Pro!",
         features: [
             "Unlimited Messages in Chats",

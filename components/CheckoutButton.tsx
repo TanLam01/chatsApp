@@ -25,7 +25,7 @@ function CheckoutButton() {
         const docRef = await addDoc(
             collection(db, "customers", session.user.id, "checkout_sessions"),
             {
-                price: "price_1PGBLYA39CLVfFA1PAJ8MBCS",
+                price: "price_1PH0QPA39CLVfFA17BmafwUS",
                 success_url: window.location.origin,
                 cancel_url: window.location.origin,
             }
@@ -35,8 +35,6 @@ function CheckoutButton() {
             const data = snap.data();
             const url = data?.url;
             const error = data?.error;
-
-            console.log(data);
 
             if (error) {
                 alert(`An error occurred: ${error.message}`);
