@@ -19,9 +19,9 @@ async function Header() {
                 {/* Logo */}
                 <div className='flex items-center justify-center gap-2'>
                     <Logo />
-                    <h1 className='text-4xl font-bold tracking-tight sm:text-3xl'>
+                    <Link href="/" className='text-4xl font-bold tracking-tight sm:text-3xl' >
                         ChatsApp
-                    </h1>
+                    </Link>
                 </div>
 
                 <div className='flex-1 flex items-center justify-end space-x-4'>
