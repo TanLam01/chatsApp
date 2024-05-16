@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClientProviders>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning={true}>
         <body className="flex flex-col min-h-screen">
           <FirebaseAuthProvider>
             <SubscriptionProvider>

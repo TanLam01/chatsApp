@@ -2,8 +2,10 @@ import { create } from 'zustand';
 import { Subscription } from '@/types/Subscription';
 
 export type LanguagesSupported =
-    | "vi"
     | "en"
+    | "vi"
+    | "zh-CN"
+    | "zh-TW"
     | "es"
     | "de"
     | "fr"
@@ -13,15 +15,13 @@ export type LanguagesSupported =
     | "ja"
     | "it"
     | "id"
-    | "de"
-    | "zh-CN"
-    | "zh-TW";
+    | "de";
 
 export const LanguagesSupportedMap: Record<LanguagesSupported, string> = {
+    en: "English",
     vi: "Vietnamese",
     "zh-CN": "Chinese (Simplified)",
     "zh-TW": "Chinese (Traditional)",
-    en: "English",
     fr: "French",
     de: "German",
     id: "Indonesian",
@@ -43,7 +43,7 @@ interface LanguagesState {
 }
 
 export const useLanguageStore = create<LanguagesState>((set) => ({
-    language: "vi",
+    language: "en",
     setLanguage: (language) => set({ language }),
     getLanguages: (isPro: boolean) => {
         if (isPro)
