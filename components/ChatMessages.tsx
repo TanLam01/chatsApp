@@ -35,7 +35,7 @@ function ChatMessages({
     return (
         <div className="p-5">
             {!loading && messages?.length === 0 && (
-                <div className="flex flex-col text-center justify-center items-center p-28 rounded-xl space-y-2 bg-indigo-400 text-white font-extralight">
+                <div className="flex flex-col text-center justify-center items-center p-20 rounded-xl space-y-2 bg-indigo-400 text-white font-extralight">
                     <MessageCircleIcon className="h-10 w-10" />
 
                     <h2>
