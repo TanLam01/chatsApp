@@ -20,7 +20,7 @@ function LanguageSelect() {
             state.getNotSupportedLanguages,
         ]);
     const subsciption = useSubscriptionStore((state) => state.subscription);
-    const isPro = subsciption?.role === "pro" && subsciption?.status === "active";
+    // const isPro = subsciption?.role === "pro" && subsciption?.status === "active";
 
     const pathName = usePathname();
     const isChatPage = pathName.includes("/chat");
@@ -43,12 +43,12 @@ function LanguageSelect() {
                             <LoadingSpinner />
                         ) : (
                             <>
-                                {getLanguages(isPro).map((language) => (
+                                {getLanguages(true).map((language) => (
                                     <SelectItem key={language} value={language}>
                                         {LanguagesSupportedMap[language]}
                                     </SelectItem>
                                 ))}
-                                {getNotSupportedLanguages(isPro).map((language) => (
+                                {/* {getNotSupportedLanguages(false).map((language) => (
                                     <Link href={"/register"} key={language} prefetch={false}>
                                         <SelectItem
                                             key={language}
@@ -59,7 +59,7 @@ function LanguageSelect() {
                                             {LanguagesSupportedMap[language]} (Pro)
                                         </SelectItem>
                                     </Link>
-                                ))}
+                                ))} */}
                             </>
                         )}
                     </SelectContent>

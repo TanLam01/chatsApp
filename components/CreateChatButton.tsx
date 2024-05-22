@@ -16,7 +16,7 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const { toast } = useToast();
-    const subscription = useSubscriptionStore((state) => state.subscription);
+    // const subscription = useSubscriptionStore((state) => state.subscription);
 
     const createNewChat = async () => {
         if (!session) return;
@@ -27,29 +27,29 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
             duration: 3000,
         });
 
-        const noOfChats = (await getDocs(chatMembersCollectionGroupsRef(session.user.id))).docs.map(doc => doc.data()).length;
+        // const noOfChats = (await getDocs(chatMembersCollectionGroupsRef(session.user.id))).docs.map(doc => doc.data()).length;
 
-        const isPro = subscription?.status === "active" && subscription?.role === "pro";
+        // const isPro = subscription?.status === "active" && subscription?.role === "pro";
 
-        if (!isPro && noOfChats >= 3) {
-            toast({
-                title: "Free plan limit exceeded",
-                description: "You've'exceeded the FREE plan limit of 20 messages per chat. Please upgrade to the PRO plan to continue chatting.",
-                variant: "destructive",
-                action: (
-                    <ToastAction
-                        altText="Upgrade"
-                        onClick={() => router.push("/register")}
-                    >
-                        Upgrade to PRO
-                    </ToastAction>
-                )
-            });
+        // if (!isPro && noOfChats >= 3) {
+        //     toast({
+        //         title: "Free plan limit exceeded",
+        //         description: "You've'exceeded the FREE plan limit of 20 messages per chat. Please upgrade to the PRO plan to continue chatting.",
+        //         variant: "destructive",
+        //         action: (
+        //             <ToastAction
+        //                 altText="Upgrade"
+        //                 onClick={() => router.push("/register")}
+        //             >
+        //                 Upgrade to PRO
+        //             </ToastAction>
+        //         )
+        //     });
 
-            setLoading(false);
+        //     setLoading(false);
 
-            return;
-        }
+        //     return;
+        // }
 
         const chatId = uuidv4();
 

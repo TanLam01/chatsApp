@@ -51,7 +51,7 @@ async function Header() {
             </nav>
 
             {/* Upgrade Banner */}
-            <UpgradeBanner />
+            {/* <UpgradeBanner /> */}
         </header>
     )
 }

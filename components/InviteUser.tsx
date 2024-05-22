@@ -44,8 +44,8 @@ function InviteUser({ chatId }: { chatId: string }) {
     const { data: session } = useSession();
     const { toast } = useToast();
     const adminId = useAdminId({ chatId });
-    const subscription = useSubscriptionStore((state) => state.subscription);
-    const router = useRouter();
+    // const subscription = useSubscriptionStore((state) => state.subscription);
+    // const router = useRouter();
 
     const [open, setOpen] = useState(false);
     const [openInviteLink, setOpenInviteLink] = useState(false);
@@ -65,29 +65,29 @@ function InviteUser({ chatId }: { chatId: string }) {
             description: "Please wait while we send the invite to the user",
         });
 
-        const noOfUsersInChat = (await getDocs(chatMembersRef(chatId))).docs.map(
-            (doc) => doc.data()
-        ).length;
+        // const noOfUsersInChat = (await getDocs(chatMembersRef(chatId))).docs.map(
+        //     (doc) => doc.data()
+        // ).length;
 
-        const isPro = subscription?.role === "pro" && subscription?.status === "active";
+        // const isPro = subscription?.role === "pro" && subscription?.status === "active";
 
-        if (!isPro && noOfUsersInChat >= 2) {
-            toast({
-                title: "Free plan limit exceeded",
-                description: "You've exceeded the FREE plan limit of 2 users per chat. Please upgrade to the PRO plan to continue chatting.",
-                variant: "destructive",
-                action: (
-                    <ToastAction
-                        altText="Upgrade"
-                        onClick={() => router.push("/register")}
-                    >
-                        Upgrade to PRO
-                    </ToastAction>
-                ),
-            });
+        // if (!isPro && noOfUsersInChat >= 2) {
+        //     toast({
+        //         title: "Free plan limit exceeded",
+        //         description: "You've exceeded the FREE plan limit of 2 users per chat. Please upgrade to the PRO plan to continue chatting.",
+        //         variant: "destructive",
+        //         action: (
+        //             <ToastAction
+        //                 altText="Upgrade"
+        //                 onClick={() => router.push("/register")}
+        //             >
+        //                 Upgrade to PRO
+        //             </ToastAction>
+        //         ),
+        //     });
 
-            return;
-        }
+        //     return;
+        // }
 
         const querySnapshot = await getDocs(getUserByEmailRef(values.email));
 

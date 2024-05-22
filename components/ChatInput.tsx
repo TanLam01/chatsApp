@@ -20,9 +20,9 @@ const formSchema = z.object({
 
 function ChatInput({ chatId }: { chatId: string }) {
     const { data: session } = useSession();
-    const router = useRouter();
-    const { toast } = useToast();
-    const subscription = useSubscriptionStore((state) => state.subscription);
+    // const router = useRouter();
+    // const { toast } = useToast();
+    // const subscription = useSubscriptionStore((state) => state.subscription);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -43,27 +43,27 @@ function ChatInput({ chatId }: { chatId: string }) {
             return;
         }
 
-        const messages = ((await getDocs(limitedMessagesRef(chatId))).docs.map((doc) => doc.data())).length;
+        // const messages = ((await getDocs(limitedMessagesRef(chatId))).docs.map((doc) => doc.data())).length;
 
-        const isPro = subscription?.role === "pro" && subscription?.status === "active";
+        // const isPro = subscription?.role === "pro" && subscription?.status === "active";
 
-        if (!isPro && messages >= 20) {
-            toast({
-                title: "Free plan limit exceeded",
-                description: "You've'exceeded the FREE plan limit of 20 messages per chat. Please upgrade to the PRO plan to continue chatting.",
-                variant: "destructive",
-                action: (
-                    <ToastAction
-                        altText="Upgrade"
-                        onClick={() => router.push("/register")}
-                    >
-                        Upgrade to PRO
-                    </ToastAction>
-                )
-            });
+        // if (!isPro && messages >= 20) {
+        //     toast({
+        //         title: "Free plan limit exceeded",
+        //         description: "You've'exceeded the FREE plan limit of 20 messages per chat. Please upgrade to the PRO plan to continue chatting.",
+        //         variant: "destructive",
+        //         action: (
+        //             <ToastAction
+        //                 altText="Upgrade"
+        //                 onClick={() => router.push("/register")}
+        //             >
+        //                 Upgrade to PRO
+        //             </ToastAction>
+        //         )
+        //     });
 
-            return;
-        };
+        //     return;
+        // };
 
         const userToStore: User = {
             id: session.user.id!,
