@@ -33,6 +33,7 @@ export default function Home() {
                 <span className="text-indigo-600 dark:text-indigo-500">
                   Let AI handle the translation.
                 </span>
+                {" "}And let chatbot AI handle the answer of your question.
               </p>
 
               <div className="mt-10 flex items-center justify-center gap-x-6">
