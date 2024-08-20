@@ -42,8 +42,13 @@ export default function Home() {
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                   Get started
                 </Link>
+                {/* Vì nhóm em chưa deploy nên để trống phần url cho chatbot, 
+                link nay sẽ được cập nhật sau, nếu thầy muốn chạy thử thì thầy phải chạy code ở colab trước 
+                rồi dán link vào thì mới nhảy qua trang chatbot.
+                Chạy file colab có tên là "Llama_3_8b_chat_hf_streamlit.ipynb"
+                */}
                 <Link
-                  href="/" // Vì nhóm em chưa deploy nên để trống phần url cho chatbot, link nay sẽ được cập nhật sau, nếu thầy muốn chạy thử thì thầy phải chạy code ở colab trước rồi dán link vào thì mới nhảy qua trang chatbot.
+                  href="/"
                   target="_blank"
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                   AI Chatbot
